@@ -6,7 +6,11 @@ using MongoDB.Driver;
 
 namespace mix_coffeeshop_web.Models
 {
-    public class ProductRepository
+    public interface IProductRepository
+    {
+        IEnumerable<Product> GetAllProducts();
+    }
+    public class ProductRepository : IProductRepository
     {
         public IEnumerable<Product> GetAllProducts()
         {
