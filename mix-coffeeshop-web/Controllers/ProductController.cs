@@ -24,6 +24,8 @@ namespace mix_coffeeshop_web.Controllers
         [HttpGet]
         public IEnumerable<Product> Get()
         {
+            var repo = new ProductRepository();
+            var products = repo.GetAllProducts();
             return products;
         }
 
